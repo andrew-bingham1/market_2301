@@ -17,4 +17,14 @@ RSpec.describe Vendor do
       expect(vendor.inventory).to eq({})
     end
   end
+
+  describe '#check_stock' do
+    it 'can check stock' do 
+      vendor = Vendor.new("Rocky Mountain Fresh")
+      item1 = Item.new({name: 'Peach', price: "$0.75"})
+
+      expect(vendor.check_stock(item1)).to eq(0)
+    end
+  end
+
 end
