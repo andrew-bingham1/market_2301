@@ -43,6 +43,16 @@ RSpec.describe Vendor do
 
       expect(vendor.check_stock(item1)).to eq(55)
     end
+
+    it 'can add multiple items' do 
+      vendor = Vendor.new("Rocky Mountain Fresh")
+      item1 = Item.new({name: 'Peach', price: "$0.75"})
+      item2 = Item.new({name: 'Tomato', price: '$0.50'})
+      vendor.stock(item1, 25)
+      vendor.stock(item2, 12)
+
+      expect(vendor.inventory.keys.count).to eq(2)
+    end
   end
 
 end
