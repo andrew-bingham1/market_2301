@@ -88,6 +88,11 @@ RSpec.describe Market do
       vendor2.stock(item4, 50) 
 
       expect(market.sorted_item_list).to eq(['Banana Nice Cream', 'Tomato'])
+
+      vendor1.stock(item1, 35)
+      vendor2.stock(item3, 25)
+
+      expect(market.sorted_item_list).to eq(['Banana Nice Cream', 'Peach', 'Peach-Raspberry Nice Cream', 'Tomato'])
     end
 
   end
