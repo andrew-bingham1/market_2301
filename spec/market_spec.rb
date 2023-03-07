@@ -141,7 +141,7 @@ RSpec.describe Market do
       vendor2.stock(item4, 50) 
       vendor2.stock(item3, 25)
       vendor3.stock(item1, 65) 
-
+      
       expect(market.overstocked_items).to eq([item1])
     end
 
