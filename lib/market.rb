@@ -53,7 +53,7 @@ class Market
         raw_list << item
       end
     end
-    raw_list
+    raw_list.uniq
   end
 
   def item_inventory(item)
@@ -71,6 +71,13 @@ class Market
     market_inventory
   end
 
-  
-
+  def overstocked_items
+    overstocked = []
+    total_inventory.each do |key, value|
+      if value[:quantity] > 50
+        overstocked << key 
+      end
+    end
+    overstocked
+  end
 end
