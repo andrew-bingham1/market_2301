@@ -17,6 +17,20 @@ RSpec.describe Market do
       expect(market.name).to eq("South Pearl Street Farmers Market")
       expect(market.vendors).to eq([])
     end
-
   end
+
+  describe '#add_vendor'
+    it 'can add vendors' do 
+      market = Market.new("South Pearl Street Farmers Market") 
+      vendor1 = Vendor.new("Rocky Mountain Fresh")
+      vendor2 = Vendor.new("Ba-Nom-a-Nom")   
+      market.add_vendor(vendor1) 
+      market.add_vendor(vendor2) 
+
+      expect(market.vendors).to eq([vendor1,vendor2])
+    end
+
+  # describe '#vendors_that_sell' do 
+  #   it 'can give a list of vendors that sell '
+  # end
 end
