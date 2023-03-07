@@ -117,6 +117,8 @@ RSpec.describe Market do
       vendor3.stock(item1, 65) 
 
       expect(market.total_inventory).to be_a Hash
+      expect(market.total_inventory.keys.first).to eq(item1)
+      expect(market.total_inventory.values.first[:quantity]).to eq(100)
     end
 
   end
