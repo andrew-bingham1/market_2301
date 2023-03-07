@@ -56,8 +56,7 @@ RSpec.describe Vendor do
   end
 
   describe '#potential revenue' do 
-
-  market = Market.new("South Pearl Street Farmers Market") 
+    it 'can determine potential revenue' do
       vendor1 = Vendor.new("Rocky Mountain Fresh")
       vendor2 = Vendor.new("Ba-Nom-a-Nom") 
       vendor3 = Vendor.new("Palisade Peach Shack") 
@@ -75,6 +74,7 @@ RSpec.describe Vendor do
       expect(vendor1.potential_revenue).to eq(29.75)
       expect(vendor2.potential_revenue).to eq(345.00)      
       expect(vendor3.potential_revenue).to eq(48.75)
+    end
   end
 
 end
