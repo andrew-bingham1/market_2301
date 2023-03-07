@@ -9,5 +9,12 @@ RSpec.describe Vendor do
 
       expect(vendor).to be_a Vendor
     end
+
+    it 'has a name and inventory' do 
+      vendor = Vendor.new("Rocky Mountain Fresh")
+
+      expect(vendor.name).to eq("Rocky Mountain Fresh")
+      expect(vendor.inventory).to eq({})
+    end
   end
 end
