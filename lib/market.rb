@@ -27,4 +27,14 @@ class Market
     end
     sellers
   end
+
+  def sorted_item_list
+    raw_list = []
+    @vendors.each do |vendor|
+      vendor.inventory.each do |item, _|
+        raw_list << item.name
+      end
+    end
+    raw_list.flatten.sort.uniq
+  end
 end
